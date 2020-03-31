@@ -13,7 +13,7 @@
   "author": "MTC Unilag",
   "license": "ISC",
   "dependencies": {
-    "botbuilder": "3.30.0",
+    "botbuilder": "3.13.1",
     "dotenv": "^8.2.0",
     "restify": "^8.5.1"
   }
