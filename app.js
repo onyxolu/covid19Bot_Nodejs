@@ -19,9 +19,6 @@ var bot = new botbuilder.UniversalBot(connector, session => {
   session.beginDialog("/welcomenew");
 }).set("storage", inMemoryStorage);
 
-// intents.onDefault(function(session) {
-//   session.beginDialog("/welcome");
-// });
 server.post("/api/messages", connector.listen());
 
 var menu = new Botmenu();
@@ -57,12 +54,3 @@ bot.on("conversationUpdate", function(message) {
     });
   }
 });
-
-// bot.dialog("/welcome", [
-//   session => {
-//     botbuilder.Prompts.text(
-//       session,
-//       "Hello! welcome to our MTC Unilag Order Bot"
-//     );
-//   }
-// ]);
