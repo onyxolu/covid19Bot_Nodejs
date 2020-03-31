@@ -1,0 +1,18 @@
+{
+  "name": "covid19bot_node",
+  "version": "1.0.0",
+  "description": "A bot that gives info and diagnosis on covid19 ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "watch": "nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MTC Unilag",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.13.1",
+    "dotenv": "^8.2.0",
+    "restify": "^8.5.1"
+  }
+}
