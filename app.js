@@ -4,7 +4,7 @@ var Botmenu = require("./bot_core/menu");
 
 var server = restify.createServer();
 
-server.listen(process.env.port || process.env.PORT || 3980, () => {
+server.listen(process.env.port || process.env.PORT || 3978, () => {
   console.log("%s listening.....", server.name);
 });
 
