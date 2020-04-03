@@ -9,13 +9,13 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 });
 
 var connector = new botbuilder.ChatConnector({
-  appId: process.env.MICROSOFT_APP_ID,
-  appPassword: process.env.MICROSOFT_APP_PASSWORD
+  appId: "759e7feb-45ac-46dd-bf29-199acda0aecc",
+  appPassword: "n4.fnGUFHqc=[x7V[ZFPoczd7UxVguQ4",
 });
 
 var inMemoryStorage = new botbuilder.MemoryBotStorage();
 
-var bot = new botbuilder.UniversalBot(connector, session => {
+var bot = new botbuilder.UniversalBot(connector, (session) => {
   session.beginDialog("/welcomenew");
 }).set("storage", inMemoryStorage);
 
@@ -24,9 +24,9 @@ server.post("/api/messages", connector.listen());
 var menu = new Botmenu();
 menu.init(bot, botbuilder);
 
-bot.on("conversationUpdate", function(message) {
+bot.on("conversationUpdate", function (message) {
   if (message.membersAdded) {
-    message.membersAdded.forEach(function(identity) {
+    message.membersAdded.forEach(function (identity) {
       if (identity.id == message.address.bot.id) {
         // Bot is joining conversation
         // - For WebChat channel you'll get this on page load.
