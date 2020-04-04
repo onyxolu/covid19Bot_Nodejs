@@ -5,7 +5,6 @@ const questions = [
   {
     text:
       "Do you have direct contact or is taking care of a positive COVID-19 PATIENT?",
-    subtitle: "hiiiii",
     image:
       "https://cdn.vox-cdn.com/thumbor/q9HCGGBsFhA8ImJDT20XxH13e60=/0x0:5816x3877/1200x800/filters:focal(2443x1474:3373x2404)/cdn.vox-cdn.com/uploads/chorus_image/image/66527471/1209198461.jpg.0.jpg",
   },
