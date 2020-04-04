@@ -15,7 +15,6 @@
   "dependencies": {
     "botbuilder": "3.13.1",
     "dotenv": "^8.2.0",
-    "fs": "0.0.1-security",
     "restify": "^8.5.1"
   }
 }
