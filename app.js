@@ -1,27 +1,27 @@
-var botbuilder = require("botbuilder");
-var restify = require("restify");
-var Botmenu = require("./bot_core/menu");
+const botbuilder = require("botbuilder");
+const restify = require("restify");
+const Botmenu = require("./bot_core/menu");
 
-var server = restify.createServer();
+const server = restify.createServer();
 
 server.listen(process.env.port || process.env.PORT || 3978, () => {
   console.log("%s listening.....", server.name);
 });
 
-var connector = new botbuilder.ChatConnector({
-  appId: "759e7feb-45ac-46dd-bf29-199acda0aecc",
-  appPassword: "n4.fnGUFHqc=[x7V[ZFPoczd7UxVguQ4",
+const connector = new botbuilder.ChatConnector({
+  appId: "",
+  appPassword: "",
 });
 
-var inMemoryStorage = new botbuilder.MemoryBotStorage();
+const inMemoryStorage = new botbuilder.MemoryBotStorage();
 
-var bot = new botbuilder.UniversalBot(connector, (session) => {
+const bot = new botbuilder.UniversalBot(connector, (session) => {
   session.beginDialog("/welcomenew");
 }).set("storage", inMemoryStorage);
 
 server.post("/api/messages", connector.listen());
 
-var menu = new Botmenu();
+const menu = new Botmenu();
 menu.init(bot, botbuilder);
 
 bot.on("conversationUpdate", function (message) {
