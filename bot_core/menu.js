@@ -91,7 +91,7 @@ init = function (bot, botbuilder) {
       session.userData.answers = {};
       session.userData.points = 0;
       askQuestion(session, Questions[0]);
-      // startOptions(session);
+      startOptions(session);
       session.beginDialog("/options1");
     },
     function (session, results) {
@@ -100,8 +100,43 @@ init = function (bot, botbuilder) {
   ]);
 
   function startOptions(session) {
-    session.beginDialog("/options1");
+    for (let i = 0; i < 8; i++) {
+      session.beginDialog("/questionnew");
+    }
   }
+
+  bot.dialog("/questionnew", [
+    function (session) {
+      askQuestion(session, Questions[1]);
+      session.beginDialog("/optionnew");
+    },
+    function (session, results) {},
+  ]);
+
+  bot.dialog("/optionnew", [
+    function (session) {
+      botbuilder.Prompts.choice(session, "Select an Option:", "Yes|No", {
+        listStyle: botbuilder.ListStyle.button,
+      });
+    },
+    function (session, results) {
+      console.log("NA me");
+      switch (results.response.index) {
+        case 0:
+          session.userData.points += 3;
+          session.userData.answers.question2 = results.response.entity;
+          // session.beginDialog("/question3");
+          break;
+        case 1:
+          session.userData.answers.question2 = results.response.entity;
+          // session.beginDialog("/question3");
+          break;
+        default:
+          // session.endDialog();
+          break;
+      }
+    },
+  ]);
 
   bot.dialog("/options1", [
     function (session) {
