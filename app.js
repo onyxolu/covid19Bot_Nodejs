@@ -16,7 +16,7 @@ const connector = new botbuilder.ChatConnector({
 const inMemoryStorage = new botbuilder.MemoryBotStorage();
 
 const bot = new botbuilder.UniversalBot(connector, (session) => {
-  session.beginDialog("/welcomenew");
+  session.beginDialog("/welcome");
 }).set("storage", inMemoryStorage);
 
 server.post("/api/messages", connector.listen());
