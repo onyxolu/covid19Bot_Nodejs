@@ -9,8 +9,8 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 });
 
 const connector = new botbuilder.ChatConnector({
-  appId: "",
-  appPassword: "",
+  appId: "759e7feb-45ac-46dd-bf29-199acda0aecc",
+  appPassword: "n4.fnGUFHqc=[x7V[ZFPoczd7UxVguQ4",
 });
 
 const inMemoryStorage = new botbuilder.MemoryBotStorage();
